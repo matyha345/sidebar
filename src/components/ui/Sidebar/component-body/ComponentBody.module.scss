@@ -1,0 +1,95 @@
+@import 'src/styles/variables.scss';
+
+.links {
+	margin-top: 5px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	.link {
+		display: flex;
+		align-items: center;
+
+		margin-top: 20px;
+		padding: 10px 0 10px 10px;
+		border-radius: 20px;
+		transition: all 0.3s;
+		position: relative;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $light-primary-linkHover-sidebar;
+			color: $light-primary-linkText-sidebar;
+		}
+		&.dark {
+			&:hover {
+				background-color: $dark-primary-linkHover-sidebar;
+				color: $dark-primary-linkText-sidebar;
+			}
+		}
+
+		&.opened {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0 0 0 0;
+			width: 40px;
+			height: 40px;
+			margin-left: 20%;
+			border-radius: 10px;
+
+			
+			&.activeEmail {
+				&::before {
+					bottom: 12px;
+					left: 27px;
+				}
+			}
+		}
+
+		&.activeTab {
+			background-color: $light-primary-activeTabBg-sidebar;
+			color: $light-primary-activeTabText-sidebar;
+			&.dark {
+				background-color: $dark-primary-activeTabBg-sidebar;
+				color: $dark-primary-activeTabText-sidebar;
+				svg {
+					border: 0.8px solid #fff;
+				}
+			}
+
+			svg {
+				padding: 2px;
+				border-radius: 5px;
+				border: 0.8px solid #0023c4;
+			}
+		}
+
+		&.activeEmail {
+			position: relative;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 10px;
+				left: 25px;
+				width: 3px;
+				height: 3px;
+				background-color: red;
+				border-radius: 50%;
+			}
+		}
+
+		.linkText {
+			font-size: 16px;
+			font-weight: 500;
+			margin-left: 10px;
+
+			&.opened {
+				display: none;
+			}
+		}
+	}
+}

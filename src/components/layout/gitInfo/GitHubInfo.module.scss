@@ -1,0 +1,73 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/animations.scss';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	position: absolute;
+
+	top: 300px;
+	left: 400px;
+	transform: translate(-50%, -50%);
+
+	color: $dark-primary-text-sidebar;
+
+	@media (max-width: 1000px) {
+		display: none;
+	}
+	&.dark {
+		color: $dark-primary-text-sidebar;
+	}
+
+	.header {
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+
+		h1 {
+			margin-left: 10px;
+		}
+
+		svg {
+			overflow: hidden;
+			background-color: $light-primary--personBg;
+			border-radius: 50%;
+			position: relative;
+
+			&.dark {
+				background-color: $dark-primary--personBg;
+			}
+		}
+	}
+
+	.content {
+		display: flex;
+		margin-top: 30px;
+		max-width: 500px;
+
+		.link {
+			margin-left: 10px;
+			padding-bottom: 1px;
+			border-bottom: 1px solid rgba(0, 0, 255, 0.445);
+			transition: all 0.3s;
+			color: $dark-primary-text-sidebar;
+			&:hover {
+				border-bottom: 1px solid rgba(0, 128, 0, 0.45);
+			}
+
+			&.dark {
+				&:hover {
+					color: rgba(0, 128, 0, 0.45);
+				}
+			}
+		}
+	}
+
+	.footer {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 50px;
+	}
+}

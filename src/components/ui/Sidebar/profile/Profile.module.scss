@@ -1,0 +1,129 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/animations.scss';
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	animation: opacity .5s;
+	
+	&.opened {
+		position: absolute;
+		top: -190px;
+		left: 110px;
+		max-width: 200px;
+		background-color: $light-primary-bg-sidebar;
+		padding: 10px;
+		border-radius: 10px;
+
+		animation: opacity .5s;
+
+		&.dark {
+			background-color: $dark-primary-bg-sidebar;
+		}
+	}
+	.links {
+		margin-top: 10px;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			margin-left: -17px;
+			width: 244px;
+			border-top: 1px solid $light-primary-border-sidebar;
+		}
+		&::after {
+			content: '';
+			display: inline-block;
+			margin-left: -17px;
+			width: 244px;
+			border-top: 1px solid $light-primary-border-sidebar;
+		}
+
+		&.opened {
+			&::before {
+				margin-left: -10px;
+				width: 200px;
+			}
+			&::after {
+				margin-left: -10px;
+				width: 200px;
+			}
+		}
+		&.dark {
+			&::before {
+				border-top: 1px solid $dark-primary-border-sidebar;
+			}
+			&::after {
+				border-top: 1px solid $dark-primary-border-sidebar;
+			}
+		}
+
+		.link {
+			margin-top: 5px;
+			padding: 8px 0 8px 8px;
+			border-radius: 10px;
+
+			&.opened {
+				font-size: 12px;
+			}
+			cursor: pointer;
+			&:hover {
+				background-color: $light-primary-linkHover-sidebar;
+				color: $light-primary-linkText-sidebar;
+			}
+			&.dark {
+				&:hover {
+					background-color: $dark-primary-linkHover-sidebar;
+					color: $dark-primary-linkText-sidebar;
+				}
+			}
+
+			p {
+				font-size: 14px;
+				font-weight: 500;
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.logout {
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		transition: all 0.3s;
+
+		&:hover {
+			color: $light-primary-linkText-sidebar;
+		}
+
+		svg {
+			cursor: pointer;
+		}
+		.logoutText {
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: 700;
+			color: $light-primary-text-sidebar;
+			transition: all 0.3s;
+			&:hover {
+				color: $light-primary-linkText-sidebar;
+			}
+		}
+	}
+
+	.version {
+		margin-top: 10px;
+		display: flex;
+
+		p {
+			font-size: 9px;
+
+			&:last-child {
+				margin-left: 5px;
+				text-decoration: underline;
+			}
+		}
+	}
+}
